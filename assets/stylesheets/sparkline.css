@@ -1,0 +1,19 @@
+:root {
+    --sparkline-edge: hsl(0deg 0% 90%);
+}
+
+table.progress + .percent {
+    float: left;
+    /*margin-right: 5px;*/
+}
+
+.done_ratio_sparkline_container {
+    padding-right: 2px;
+}
+
+.done_ratio_sparkline > canvas {
+    width: 150px;
+    margin: 0 5px;
+    border-inline: 1px solid var(--sparkline-edge);
+    padding-inline: 1px;
+}

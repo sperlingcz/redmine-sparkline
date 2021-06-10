@@ -1,0 +1,10 @@
+<%= title [l(:label_plugins), {:controller => 'admin', :action => 'plugins'}], :sparkline %>
+
+<div id="settings">
+<%= form_tag({:action => 'plugin', :controller => 'settings'}) do %>
+<div class="box tabular settings">
+  <%= render :partial => 'settings/sparkline/sparkline', :locals => {:settings => (Setting.send "plugin_sparkline")}%>
+</div>
+<%= submit_tag l(:button_apply) %>
+<% end %>
+</div>

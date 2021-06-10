@@ -1,0 +1,69 @@
+<% project_suffix = @project ? '-' + @project.id.to_s : '' %>
+
+<% @settings ||= settings %>
+
+
+<% if @project %>
+  <h3><%= @project.name %></h3>
+    <%= hidden_field_tag 'project_id', @project.identifier %>
+    <% else %>
+  <h3> <%= t('sparkline_settings.global_plugin_settings') %></h3>
+  <p>
+    <%= label_tag 'line_color', t('sparkline_settings.line_color') %>
+    <%= text_field_tag 'settings[line_color]',
+                       @settings[:line_color.to_s],
+                       size: 30,
+                       id: 'line_color' %>
+  </p>
+
+  <p>
+    <%= label_tag 'fill_color', t('sparkline_settings.fill_color') %>
+    <%= text_field_tag 'settings[fill_color]',
+                       @settings[:fill_color.to_s],
+                       size: 30,
+                       id: 'fill_color' %>
+  </p>
+  <hr />
+
+  <h3> <%= t('sparkline_settings.default_plugin_settings') %></h3>
+<% end %>
+
+
+<p>
+  <%= label_tag 'settings[x_min]', t('sparkline_settings.min_x') %>
+  <%= select_tag 'settings[x_min' + project_suffix + ']',
+                 options_from_collection_for_select(SparklineSetting.x_axis_min_options, :first, :last, @settings[:x_min.to_s + project_suffix].blank? ? @settings[:x_min.to_s] : @settings[:x_min.to_s + project_suffix]),
+                 id: 'x_min',
+                 include_blank: false
+  %>
+</p>
+
+<p>
+  <%= label_tag 'settings[x_max]', t('sparkline_settings.max_x') %>
+  <%= select_tag 'settings[x_max' + project_suffix + ']',
+                 options_from_collection_for_select(SparklineSetting.x_axis_max_options, :first, :last, @settings[:x_max.to_s + project_suffix].blank? ? @settings[:x_max.to_s] : @settings[:x_max.to_s + project_suffix]),
+                 id: 'x_max',
+                 include_blank: false
+  %>
+</p>
+
+<p>
+  <%= label_tag 'time_offset', t('sparkline_settings.days_offset') %>
+  <%= number_field_tag 'settings[time_offset' + project_suffix + ']',
+                       @settings[:time_offset.to_s + project_suffix].blank? ? @settings[:time_offset.to_s] : @settings[:time_offset.to_s + project_suffix],
+                       size: 30,
+                       id: 'time_offset',
+                       min: 1,
+                       disabled: (@settings[:x_min.to_s + project_suffix].blank? ? @settings[:x_min.to_s] : @settings[:x_min.to_s + project_suffix]) != "offset" %>
+</p>
+
+
+<script type="application/javascript">
+    $("#x_min").change(function () {
+        if ($("#x_min").val() == "offset") {
+            $("#time_offset").removeAttr("disabled");
+        } else {
+            $("#time_offset").attr("disabled", true);
+        }
+    });
+</script>

@@ -1,0 +1,16 @@
+# English strings go here for Rails i18n
+en:
+  sparkline: "Sparkline"
+
+  sparkline_settings:
+    global_plugin_settings: "Global settings"
+    line_color: "Line color"
+    fill_color: "Fill color"
+    default_plugin_settings: "Default project settings"
+    min_x: "Minimum (axis x)"
+    max_x: "Maximum (axis x)"
+    days_offset: "Time offset in days"
+    offset: "Offset days ago"
+    issue_created: "Issue created date"
+    today: "Today"
+    issue_due: "Issue due date"

@@ -1,0 +1,16 @@
+# Czech strings go here for Rails i18n
+cs:
+  sparkline: "Sparkline"
+
+  sparkline_settings:
+    global_plugin_settings: "Globální nastavení"
+    line_color: "Barva grafu"
+    fill_color: "Barva výplně pod grafem"
+    default_plugin_settings: "Defautní nastavení projektu"
+    min_x: "Minimum (osa x)"
+    max_x: "Maximum (osa x)"
+    days_offset: "Časový posun ve dnech"
+    offset: "Před několika dny"
+    issue_created: "Počátek úkolu"
+    today: "Dnes"
+    issue_due: "Termín úkolu"

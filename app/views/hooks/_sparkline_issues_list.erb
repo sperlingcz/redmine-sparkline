@@ -1,0 +1,22 @@
+<datalist id='sparkline-list'>
+  <% @issues.each do |issue| %>
+    <%#= issue.id %>
+      <% result = IssueSparkline.new(issue).to_tag(:option) %>
+<%= result %>
+<% end %>
+</datalist>
+
+<% if @issues.any? { |issue| issue.project.enabled_module(:sparkline) } %>
+  <% content_for :header_tags do %>
+    <%= javascript_include_tag 'jquery.sparkline', plugin: 'sparkline' %>
+
+    <%= javascript_include_tag 'sparkline', plugin: 'sparkline' %>
+
+    <%= stylesheet_link_tag 'sparkline', plugin: 'sparkline' %>
+  <% end %>
+<% end %>
+
+
+<script type="text/javascript">
+    issues_list_sparkline();
+</script>
