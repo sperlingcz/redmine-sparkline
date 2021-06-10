@@ -9,4 +9,4 @@ Following can be set in the plugin configuration:
   - start point in time (sparkline's left edge): issue creation date or last few days (days offset value)
   - end point in time (sparkline's right edge): today or issue due date
 
-Plugin functionality can be enabled for selected project as module.
+Plugin functionality can be enabled/disabled as module within a project.
