@@ -4,7 +4,7 @@ The sparkline is displayed on issue list within the `Done %` column and on issue
 ![sparkline-issue detail](https://user-images.githubusercontent.com/37396169/121325787-31fa1780-c912-11eb-90d8-73888f305715.png)
 
 Following can be set in the plugin configuration:
-- global settings: line color and fill color using HTML color names
+- global settings: line color and fill color using HTML color names (e.g. `lightblue`)
 - project settings (default in global settings):
   - start point in time (sparkline's left edge): issue creation date or last few days (days offset value)
   - end point in time (sparkline's right edge): today or issue due date
