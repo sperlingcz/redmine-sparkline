@@ -3,8 +3,8 @@ Redmine::Plugin.register :sparkline do
   author 'Sperling'
   description 'Sparkline plugin for done ratio of issues'
   version '1.0.0'
-  url 'https://www.sperling.cz/redmine'
-  author_url 'https://www.sperling.cz/redmine'
+  url 'https://github.com/sperlingcz/redmine-sparkline.git'
+  author_url 'https://www.sperling.cz'
 
   require_dependency 'sparkline_hook_listener'
 
